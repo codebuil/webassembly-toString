@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>
+add
+		</title>
+		
+	</head>
+	<body bgColor='green'>
+		<div id="txt" bgColor="green" >
+			
+		</div>
+		<script>
+	var txts=document.getElementById("txt");
+	txts.innerHTML="";
+	function putcc(charc){
+		if(charc==12){
+			txts.innerHTML+="<br>";
+		}else{
+			if(charc>31 && charc < 127) txts.innerHTML+=String.fromCharCode(charc);
+		}
+	}
+	fetch("hello.wasm") 
+   .then(bytes => bytes.arrayBuffer()) 
+   .then(mod => WebAssembly.compile(mod)) 
+   .then(module => { 
+      let instance = new WebAssembly.Instance(module);
+      	
+x=0;
+	d=0;
+	e=0;
+	
+	e=(instance.exports.eeppromX(0));
+	for(d=0;d<e;d++)putcc(instance.exports.eeppromX(d+1));
+});
+
+	</script>
+	</body>
+</html>
