@@ -1,2 +1,2 @@
-# webassembly-toInteger
-webassembly toInteger function javascript 
+# webassembly-toString
+webassembly toString function javascript 
